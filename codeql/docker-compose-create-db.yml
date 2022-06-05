@@ -7,6 +7,10 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - CODEQL_CLI_ARGS=database create --language=javascript /opt/results/source_db -s ~${TARGET_SOURCE}
+      - |
+       CODEQL_CLI_ARGS=database create 
+       --language=javascript 
+       /opt/results/source_db 
+       -s ~${TARGET_SOURCE}
       - ../:/opt/src
       - ./results:/opt/results
